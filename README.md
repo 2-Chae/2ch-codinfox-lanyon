@@ -7,7 +7,7 @@ You can copy this template easily by pressing Fork button.
 All the configurations are inside either `_config.yml` or `_config.scss`. The options are fairly straightforward.
 You can refer additional explanation on [Codinfox's Github](https://github.com/codinfox/codinfox-lanyon).
 
-Please understand that I am not a web developer so codes is kind of a mess. :)
+Please understand that I am not a web developer so codes are kind of mess. :)
 
 ## Category
 
