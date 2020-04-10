@@ -1,0 +1,114 @@
+
+
+.mini-post-tag {
+  display: inline-block;
+  background: rgba($theme-color, 0.15);
+  padding: 0 .5rem;
+  margin-right: .5rem;
+  border-radius: 4px;
+  color: $theme-color;
+  font-family: $font-sans;
+  font-size: 70%;
+  &:hover {
+    text-decoration: none;
+    background: $theme-color;
+    color: $white;
+  }
+  @include transition(all .1s ease-in-out);
+}
+
+
+.post-minitag-date{
+  position: relative;
+  margin-bottom: 8px;
+}
+// .post-minitag-span{
+//   float: left; 
+//   width: 70%
+// }
+
+.post-date-span{
+  width: 30%
+}
+
+
+.post-tag {
+  display: inline-block;
+  background: rgba($theme-color, 0.15);
+  padding: 0 .5rem;
+  margin-right: .5rem;
+  border-radius: 4px;
+  color: $theme-color;
+  font-family: $font-sans;
+  font-size: 90%;
+  &:before {
+    content: "\f02b";
+    font-family: $font-font-awesome;
+    padding-right: .5em;
+  }
+  &:hover {
+    text-decoration: none;
+    background: $theme-color;
+    color: $white;
+  }
+  @include transition(all .1s ease-in-out);
+}
+
+.tag-selected {
+  text-decoration: none;
+  background: $theme-color;
+  color: $white;
+}
+
+
+.tags-expo {
+  :target:before {
+    content:"";
+    display:block;
+    height:72px; /* fixed header height*/
+    margin:-72px 0 0; /* negative fixed header height */
+  }
+  .tags-expo-list {
+    @media (min-width: 38em) {
+      font-size: 0.9rem;
+      .post-tag {
+        margin: .2em .3em;
+        display: inline-block;
+      }
+    }
+  }
+  .tags-expo-section {
+    ul {
+      list-style-type: circle;
+      list-style-position: outside;
+      width:95%;
+      margin-left: 30px;
+      padding: 0;
+      li {
+        @include transition(all .1s ease-in-out);
+        margin-bottom: 8px;
+        border-bottom: 1px solid #efefef;
+        padding: 0 1rem;
+        &:hover {
+          list-style-type: disc;
+          padding: 0 .5rem;
+        }
+      }
+      .hidden{
+          display :none;
+      }
+    }
+    a {
+      text-decoration: none;
+    }
+    .post-date {
+      display: inline-block;
+      font-size: 77%;
+      color: $post-date-color;
+      margin: 0;
+      padding: 0;
+    }
+    font-family: $font-sans;
+  }
+}
+

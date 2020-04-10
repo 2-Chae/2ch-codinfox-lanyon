@@ -1,0 +1,52 @@
+---
+layout: page
+title: Search
+page_title: Search
+permalink: /search/
+---
+
+
+<html>
+
+<head>
+    <!-- jquery 불러오기 -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- 검색 상자 -->
+    <center>
+        <form id="search-searchform" class="searchbox" action="/search">
+            <!-- <table style="text-align: center; width:580px; height: 50px;"> -->
+            <!-- <tr><td> -->
+            <input id="search-searchtext" name="q" type="text" placeholder="Search...">
+            <!-- </td></tr> -->
+            <!-- </table> -->
+        </form>
+    </center>
+
+    <script>
+        function getUrlVars() // 쿼리 스트링을 파싱하는 함수
+        {
+            var vars = [], hash;
+            var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+            for (var i = 0; i < hashes.length; i++) {
+                hash = hashes[i].split('=');
+                vars.push(hash[0]);
+                vars[hash[0]] = hash[1];
+            }
+            return vars;
+        }
+        $(document).ready(function () { // 쿼리 스트링에서 'q'파라미터를 읽어 창 제목과 표시 제목을 바꿈
+            var txt_title = decodeURIComponent(getUrlVars()['q'])
+            $("#search-searchtext").val(txt_title);
+        });
+    </script>
+
+    <!-- 구글 맞춤 검색 CSE code -->
+    <script async src="https://cse.google.com/cse.js?cx=007872157788999427196:ok4wksw1bfo"></script>
+    <div class="gcse-searchresults-only"></div>
+</body>
+
+</html>

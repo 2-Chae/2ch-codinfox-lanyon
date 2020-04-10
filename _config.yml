@@ -1,0 +1,56 @@
+# Site Info
+title: 2-Chae
+# tagline: 'There is no end to learning'
+description: 'A Jekyll theme adapted from <a href="https://github.com/codinfox/codinfox-lanyon" target="_blank">Codinfox-Lanyon</a>. Made by <a href="http://2-chae.github.io" target="_blank">@2-chae</a>.'
+baseurl: ""
+url: https://2-chae.github.io
+logo: '/public/logo.png'
+
+# Site configurations
+gems:
+  - jekyll-paginate
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter_opts:
+    default_lang: html
+    css_class   : 'syntax'
+excerpt_separator: "<!-- more -->"
+sass:
+  style: compressed
+  sass_dir: _scss    
+paginate: 5
+paginate_path: '/posts/page:num'
+permalink: pretty
+
+version: 1.0.0
+
+# About/contact
+author:
+  name: Chaehyeon Lee
+  description: <strong>Master's student</strong> specializing in <strong>Computer Vision</strong>. Also interested in <strong>Self-Supervised Learning</strong>.
+  gravatar:  alsalksfdja343rdha # md5 hash of your email address
+  contact:
+    linkedin:  https://www.linkedin.com/in/chaehyeon
+    github:    https://github.com/2-Chae
+    star:  https://hyeonnii.tistory.com
+    email:     mailto:123456ccdd@naver.com
+
+# Navigation (2nd level links supported)
+nav:
+  Home:           
+    - '/'
+  Blog:           
+    - '/blog/'
+  About:          
+    - '/about/'
+
+# Puglins
+mathjax: true # whether support mathjax
+google_analytics_token: 'UA-00000000-1' # leave blank if you don't want google analytics
+# disqus_short_name: # leave blank if you don't want disqus
+
+
+plugins:
+    - jekyll-feed

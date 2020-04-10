@@ -1,0 +1,51 @@
+// Profile
+
+.portrait-title h3{
+  font-size: 1rem; 
+  margin:0rem 0rem 1rem 0rem;
+  color: rgba(0,0,0, 0.54);
+}
+
+.network-icon{
+  margin-bottom: 2.2rem;
+}
+
+.network-icon i{
+  font-size: 1.7rem;
+}
+
+.network-icon i:hover {
+  transform: scale(1.5)
+}
+
+.intro-wrapper {
+  display: grid;
+  grid-template-columns: 38% 62%;
+}
+
+.ul-interests{
+  padding-inline-start: 20px; 
+}
+
+.intro-wrapper li {
+  font-size:0.9rem;
+}
+
+.ul-edu{
+  padding-inline-start: 3px; 
+}
+
+.course{
+  font-size:0.9rem;
+  margin: 0px 0px 3px 0px;
+}
+
+.course-year{
+  font-size:0.8rem;
+}
+
+.institution{
+  font-size:0.8rem;
+  color:gray;
+  margin-bottom:0.5rem;
+}

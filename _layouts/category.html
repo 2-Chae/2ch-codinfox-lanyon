@@ -1,0 +1,105 @@
+---
+layout: page
+---
+
+<div class="page">
+  <div class="tags-expo">
+    <div class="tags-expo-section">
+
+      <!-- tag 구하기  -->
+      {% assign category = page.category | default: page.title %}
+
+      <div class="tags-expo-list">
+        {% for tag in page.tags %}
+        <script>
+          var tags = '{{page.tags}}'.split(',');
+          for (var i in tags){
+            document.write('<span class="post-tag" data-tag="', tags[i], '">', tags[i].replace("-"," "), '</span>');
+          }
+          $(`.post-tag[data-tag=ALL]`).addClass('tag-selected');
+        </script>
+        {% endfor %}
+      </div>
+
+      <hr>
+
+      <ul class="tags-expo-posts">
+
+        {% for post in site.categories[category] %}
+        <script>
+          document.write('<a class="post-title"  href="', '{{ site.baseurl }}', '{{post.url}}', '">');
+          var tag_list = ''
+        </script>
+
+        {% for tag in post.tags %}
+        <script>
+          tag_list += 'data-{{ tag }} ';
+        </script>
+
+        {% endfor %}
+        <script>
+          document.write('<li class="each-post"' + tag_list + '>');
+          document.write('{{post.title}}');
+          document.write('<div class="post-minitag-date">');
+          document.write('<div class="post-minitag-span">');
+        </script>
+        {% for tag in post.tags %}
+        <script>
+          document.write('<a class="mini-post-tag" data-tag="', '{{tag}}', '">', '{{tag}}'.replace("-"," "), '</a>');
+        </script>
+        {% endfor %}
+        <script>
+          document.write('</div>');
+          document.write('<div class="post-date-span"><small class="post-date">', 'Posted on {{ post.date | date_to_string }}', '</small></div>');
+          document.write('</div></li>')
+          document.write('</a>')
+        </script>
+        {% endfor %}
+
+
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+
+  $("[data-tag]").click((e) => {
+    currentTag = e.target.dataset.tag;
+    filterByTagName(currentTag);
+  })
+
+  function filterByTagName(tagName) {
+    $('.hidden').removeClass('hidden');
+
+    if (tagName != 'ALL'){
+    $('.each-post').each((index, elem) => {
+      if (!elem.hasAttribute(`data-${tagName}`)) {
+        $(elem).addClass('hidden');
+      }
+    });
+    }
+    $(`.post-tag`).removeClass('tag-selected');
+    $(`.post-tag[data-tag=${tagName}]`).addClass('tag-selected');
+  }
+
+  $(document).ready(function() {
+    let currentTag = "";
+    const queryTag = getQuery().tag;
+    if (queryTag) {
+      currentTag = queryTag;
+      filterByTagName(currentTag)
+    }
+    $("[data-tag]").click((e) => {
+      currentTag = e.target.dataset.tag;
+      filterByTagName(currentTag);
+    })
+  });
+
+  function getQuery() {
+      var params = {};
+      window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(str, key, value) { params[key] = value; });
+      return params;
+  }
+
+</script>
