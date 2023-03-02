@@ -7,8 +7,6 @@ url: https://2-chae.github.io
 logo: '/public/logo.png'
 
 # Site configurations
-gems:
-  - jekyll-paginate
 markdown: kramdown
 highlighter: rouge
 kramdown:
@@ -54,3 +52,4 @@ google_analytics_token: 'UA-00000000-1' # leave blank if you don't want google a
 
 plugins:
     - jekyll-feed
+    - jekyll-paginate
