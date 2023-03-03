@@ -38,5 +38,19 @@ categories: 'MyCat'
 
 You can understand better when you see an example code I provide.
 
+## Error
+If you got the following error message during installing,
+
+```
+An error occurred while installing eventmachine (1.2.7), and Bundler cannot continue.
+```
+
+Try the code below,
+```
+gem install eventmachine -- --with-openssl-dir=/usr/local/Cellar/openssl@1.1/1.1.1h
+```
+
+Then, try `bundle install` again.
+
 ## License
 Open sourced under the [MIT license](https://github.com/2-Chae/2ch-codinfox-lanyon/blob/master/LICENSE).
